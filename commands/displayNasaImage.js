@@ -3,8 +3,8 @@ const fetch = require('node-fetch');
 module.exports = {
     name: 'displayNASA',
     description: 'Displays an image taken by Nasa',
-    async execute(message, args, channel) {
-        const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`);
+    async execute(message, args, channel, apiKey) {
+        const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
         const json = await response.json();
         let embed = new Discord.MessageEmbed()
             .setColor("BLUE")

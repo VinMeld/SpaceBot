@@ -9,12 +9,12 @@ function between(min, max) {
 module.exports = {
     name: 'displayNasaDaily',
     description: 'Displaying APOD from NASA on a timer',
-    async execute(channel) {
+    async execute(channel, apiKey) {
         var rule = new schedule.RecurrenceRule();
         rule.hour = parseInt(between(12, 20));
         rule.minute = parseInt(between(1, 59));
         var j = schedule.scheduleJob(rule, async function () {
-            const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`);
+            const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
             const json = await response.json();
             let embed = new Discord.MessageEmbed()
                 .setColor("BLUE")

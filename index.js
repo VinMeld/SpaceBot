@@ -12,7 +12,8 @@ for(const file of commandFiles){
 client.on("ready", async () => {
     client.user.setActivity("To INFINITY and BEYOND!!");
     let channel = client.channels.cache.get('790773684616560671');
-    client.commands.get('displayNasaDaily').execute(channel);
+    const apiKey = require('./api_key.js').nasaAPI
+    client.commands.get('displayNasaDaily').execute(channel, apiKey);
 });
 client.on("message", async message => {
     if (message.content.startsWith(prefix)) {
