@@ -11,7 +11,7 @@ for(const file of commandFiles){
 }
 client.on("ready", async () => {
     client.user.setActivity("To INFINITY and BEYOND!!");
-    let channel = client.channels.cache.get('726258797462552578');
+    let channel = client.channels.cache.get('790773684616560671');
     client.commands.get('displayNasaDaily').execute(channel);
 });
 client.on("message", async message => {
@@ -21,12 +21,6 @@ client.on("message", async message => {
         if(command === "ping"){
             client.commands.get('ping').execute(message, args);
         }
-        if(command == "displayimage" && args[1] != null){ 
-            let channel = client.channels.cache.get(args[1]);
-            client.commands.get('displayNASA').execute(message, args, channel);
-        }
     }
 });
 client.login(token);
-// &ping
-// pong!
