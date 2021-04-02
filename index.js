@@ -21,6 +21,8 @@ client.on("message", async message => {
         const command  = args[0].toLowerCase();
         if(command === "ping"){
             client.commands.get('ping').execute(message, args);
+        } else if (command === "brackets") {
+            client.commands.get('displayTourney').execute(message, args);
         }
     }
 });
