@@ -23,6 +23,8 @@ client.on("message", async message => {
             client.commands.get('ping').execute(message, args);
         } else if (command === "brackets") {
             client.commands.get('displayTourney').execute(message, args);
+        }  else if (command === "teams") {
+            client.commands.get('teamDisplay').execute(message, args);
         }
     }
 });
