@@ -9,7 +9,7 @@ module.exports = {
     description: 'Shows image from tournament',
     async execute(message, args) {
         console.log("here")
-        const response = await fetch(`https://Vinaycat:8HnjZ5EeX7Phmyv1uUpgmOUavKh8IYsTtCdpe1Wb@api.challonge.com/v1/tournaments/njzw8ris.json`);
+        const response = await fetch(`https://Vinaycat:8HnjZ5EeX7Phmyv1uUpgmOUavKh8IYsTtCdpe1Wb@api.challonge.com/v1/tournaments/ciqlmas9.json`);
         if (response) {
             try {
                 const json = await response.json();
